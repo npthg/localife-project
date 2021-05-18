@@ -1,0 +1,87 @@
+type Post @model {
+  id: ID!
+  image: String!
+  gallery: [String]
+  type: String!
+  title: String!
+  description: String!
+  province: String!
+  address: String!
+
+  hours: Int!
+  activity_n: Int!
+  maxGuests: Int!
+  activity: [Activity] @connection(keyName: "byPost", fields: ["id"])  
+
+  oldPrice: Float
+  newPrice: Float!
+
+  latitude: Float!
+  longitude: Float!
+
+  lineUserID : String
+
+  startTime : AWSTime
+  endTime : AWSTime
+
+
+}
+
+type Activity @model @key(name: "byPost", fields: ["postID", "title"]) {
+  id: ID!
+  postID : ID!
+  time: String!
+  title: String!
+  description: String!
+}
+
+type Trip @model {
+  id: ID!
+  userID: ID!
+  date : AWSDate!
+  booked: [Booked] @connection(keyName: "byTrip", fields: ["id"])
+  guests: Int
+  isDone: Boolean 
+  tripStartTime: AWSTime
+  tripEndTime: AWSTime
+}
+
+type User @model {
+  id: ID!
+  username: String!
+  email: String!
+  imageUri: String
+  
+  exp: [Experience] @connection(keyName: "byUser", fields: ["id"])
+
+  book: [Booked] @connection(keyName: "byBook", fields: ["id"])
+
+}
+
+type Booked @model 
+@key(name: "byBook", fields: ["userID"]) 
+@key(name: "byTrip", fields: ["tripID"])  {
+  
+  id: ID!
+  userID: ID!
+
+  tripID : ID!
+  postID: ID!
+  post: Post @connection(fields: ["postID"])
+  date: AWSDate!
+
+  isDone: Boolean
+}
+
+type Experience @model @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  contentUri: String!
+  description: String!
+
+  userID: ID!
+  user: User @connection(fields: ["userID"])
+
+  postID: ID!
+  post: Post! @connection(fields: ["postID"])
+
+}

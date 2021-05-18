@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-localife-dev-113325-authRole",
+      "UnauthRoleArn": "arn:aws:iam::070149973725:role/amplify-localife-dev-113325-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::070149973725:role/amplify-localife-dev-113325-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-localife-dev-113325-deployment",
+      "UnauthRoleName": "amplify-localife-dev-113325-unauthRole",
+      "StackName": "amplify-localife-dev-113325",
+      "StackId": "arn:aws:cloudformation:us-east-2:070149973725:stack/amplify-localife-dev-113325/18dd1210-a3ed-11eb-9891-069c988534ce",
+      "AmplifyAppId": "dm1ei15hnckvm"
+    }
+  },
+  "localife": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-localife-localife-115225-authRole",
+      "UnauthRoleArn": "arn:aws:iam::740797361130:role/amplify-localife-localife-115225-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::740797361130:role/amplify-localife-localife-115225-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-localife-localife-115225-deployment",
+      "UnauthRoleName": "amplify-localife-localife-115225-unauthRole",
+      "StackName": "amplify-localife-localife-115225",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:740797361130:stack/amplify-localife-localife-115225/bf53e630-a3ef-11eb-aa21-0a56a9bd78de",
+      "AmplifyAppId": "d1obxj27gj0dqs"
+    },
+    "categories": {
+      "auth": {
+        "localifeca6b2b99": {}
+      }
+    }
+  }
+}
